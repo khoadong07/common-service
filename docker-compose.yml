@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  common-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: common-service
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      ai-network:
+        ipv4_address: "170.20.0.20"
+
+networks:
+  ai-network:
+    external:
+      name: ai-network
