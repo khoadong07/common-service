@@ -6,6 +6,8 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: common-service
+    ports:
+      - "9902:8000"
     volumes:
       - .:/app
     environment:
